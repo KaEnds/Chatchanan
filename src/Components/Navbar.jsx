@@ -52,7 +52,7 @@ function Navbar() {
       </div>
       <div className={`slider-nav ${isActive ? 'active' : ''}`}  ref={sliderRef}>
         <div className="navigator">
-          <a href="/">Home</a>
+          <a href="/Chatchanan/">Home</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#art-gallary">Art gallary</a>
           <a href="#about">About</a>
