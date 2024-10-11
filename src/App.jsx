@@ -1,11 +1,24 @@
+import { useState, useEffect, useRef } from "react";
 import { Fade, Reveal } from "react-awesome-reveal";
-import { motion } from 'framer-motion'
+import { motion, useScroll, useSpring  } from 'framer-motion'
 import { keyframes } from "@emotion/react";
+import gsap from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import LazyLoad from 'react-lazyload';
 import './App.css'
 
 import mypicture from '../public/assets/mypicture.png/'
 import Navbar from "./Components/Navbar";
 import Mouse from "./Mouse";
+
+import canvas1 from '../public/illustration/Fighting_Hutao.png'
+import canvas2 from '../public/illustration/yinlin2.png'
+import canvas3 from '../public/illustration/ellen-Recovered.png'
+import canvas4 from '../public/illustration/ocdraw04.png'
+import canvas5 from '../public/illustration/breakdown art-Recovered.png'
+import canvas6 from '../public/illustration/drawoc-final.png'
+import canvas7 from '../public/illustration/koledo.png'
+
 
 const text_up = keyframes`
   from {
@@ -17,7 +30,68 @@ const text_up = keyframes`
   }
 `;
 
+gsap.registerPlugin(ScrollTrigger);
+
 function App() {
+  const { scrollYProgress } = useScroll();
+  const containerRef = useRef(null);
+  const [cw, setCW] = useState();
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+  const imagesToLoad = 7; // Number of images to be loaded
+  const [loadedImages, setLoadedImages] = useState(0);
+  const [showImages, setShowImages] = useState(false);
+  
+  const handleImageLoad = () => {
+    setLoadedImages(prev => prev + 1);
+  };
+
+  const updateWidth = () => {
+    if (containerRef.current) {
+      setCW(containerRef.current.getBoundingClientRect().width);
+    }
+  };
+
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+  useEffect(() => {
+    const container = containerRef.current;
+    let ww = window.innerWidth
+
+    updateWidth();
+    window.addEventListener('reload', updateWidth);
+    // imagesToPreload.forEach((url) => preloadImage(url));
+
+    const imageLoadDelay = setTimeout(() => {
+      setShowImages(true);
+    }, 2000); // 2-second delay for demo purposes
+
+    if (loadedImages === imagesToLoad) {
+      setAllImagesLoaded(true);
+    }
+
+    if (cw > 0) {
+
+      gsap.set(".canvas", {  xPercent: -50, yPercent: -50, x: 0, y: 0})
+
+      gsap.to(".canvas1", {filter: 'blur(0px)', opacity:1 ,x: `${((-cw/3.3) / ww) * 100}vw`, y: `${((-cw/10) / ww) * 100}vw`,ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1,}});
+      gsap.to(".canvas2", {filter: 'blur(0px)', opacity:1,x: `${((-cw/40) / ww) * 100}vw`, y: `${((-cw/5.5) / ww) * 100}vw`, ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      gsap.to(".canvas3", {filter: 'blur(0px)', opacity:1,x: `${((-cw/1000) / ww) * 100}vw`, y: `${((cw/6) / ww) * 100}vw`,ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      gsap.to(".canvas4", {filter: 'blur(0px)', opacity:1,x: `${((cw/4.5) / ww) * 100}vw`, y: `${((cw/18) / ww) * 100}vw`,  ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      gsap.to(".canvas5", {filter: 'blur(0px)', opacity:1,x: `${(-(cw/4.4) / ww) * 100}vw`, y: `${((cw/4.3) / ww) * 100}vw`,  ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      gsap.to(".canvas6", {filter: 'blur(0px)', opacity:1,x: `${((cw/5.3) / ww) * 100}vw`, y: `${((-cw/5.2) / ww) * 100}vw`,  ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      gsap.to(".canvas7", {filter: 'blur(0px)', opacity:1,x: `${((cw/2.6) / ww) * 100}vw`, y: `${((-cw/5.8) / ww) * 100}vw`,  ease: "none", scrollTrigger: {trigger: container, start: "top center", end: "90% bottom",scrub: 1, }});
+      ScrollTrigger.refresh();
+    }
+
+    return () => {
+      window.removeEventListener('reload', updateWidth);
+      clearTimeout(imageLoadDelay);
+    };
+  }, [cw, loadedImages]);
 
   return (
     <>
@@ -154,7 +228,36 @@ function App() {
         </Fade>
         <div  className="transition-container">
         </div>
+        <Fade cascade damping={1} duration={1000}>
+          <div className='gallary-container'>
+            <div className='gallary-box d-flex flex-column justify-content-start align-items-center'>
+            <Reveal triggerOnce damping={1} keyframes={text_up} duration={500}>
+              <div id='art-gallary' className='title p-0'><span className='fw-semibold'>M</span>y Art Gallary</div>
+            </Reveal>
+              <div className='text text-center'>My visual art contributions for game contests and competitions, as well as my commission art work. </div>  
+              <div   ref={containerRef} className='image-container'>
+                <div className="canvas1 canvas">{showImages && (<LazyLoad offset={100} once><img src={canvas1} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas2 canvas">{showImages && (<LazyLoad offset={100} once><img src={canvas2} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas3 canvas">{showImages && (<LazyLoad offset={150} once><img src={canvas3} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas4 canvas">{showImages && (<LazyLoad offset={200} once><img src={canvas4} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas5 canvas">{showImages && (<LazyLoad offset={250} once><img src={canvas5} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas6 canvas">{showImages && (<LazyLoad offset={300} once><img src={canvas6} onLoad={handleImageLoad} /></LazyLoad>)}</div>
+                <div className="canvas7 canvas">{showImages && (<LazyLoad offset={350} once><img src={canvas7} onLoad={handleImageLoad}/></LazyLoad>)}</div>
+              </div> 
+            <div className='button-group mt-0'>
+              <Fade triggerOnce damping={1} duration={1000} delay={500} direction='up'>
+                <motion.a href='#' className='view-port-button' whileHover={{ scale: 1.15, transition: { duration: 0.3 },}} whileTap={{ scale: 0.9 }} > View more </motion.a>
+              </Fade>
+            </div>
+            </div>
+          </div>
+
+        </Fade >
+        <div  className="transition-container">
+        </div>
       </div>
+
+      <motion.div className='landing-footer' style={{ scaleX }}/>
       <Mouse />
     </>
   )
