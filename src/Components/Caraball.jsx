@@ -14,8 +14,8 @@ import image8 from "../../public/project_asset/multi image2.png"
 import image9 from "../../public/project_asset/multi image4.png"
 import image10 from "../../public/project_asset/multi image5.png"
 
-import video1 from "../../public/project_video/single-video.mp4"
-import video2 from "../../public/project_video/multi-video.mp4"
+// import video1 from "../../public/project_video/single-video.mp4"
+// import video2 from "../../public/project_video/multi-video.mp4"
 
 function Caraball() {
   return (
@@ -71,9 +71,9 @@ function Caraball() {
          </div>
          <div className="row my-3">
          <div className="col-12 d-flex flex-column justify-content-between">
-            <video width="100%" controls autoPlay muted>
+            {/* <video width="100%" controls autoPlay muted>
               <source src={video1} type="video/mp4" />
-            </video>
+            </video> */}
           </div>
          </div>
          <p>Multiple player</p>
@@ -92,9 +92,9 @@ function Caraball() {
          </div>
          <div className="row my-3 vedio-row">
           <div className="col-12 d-flex flex-column justify-content-between">
-            <video width="100%" controls autoPlay muted>
+            {/* <video width="100%" controls autoPlay muted>
               <source src={video2} type="video/mp4" />
-            </video>
+            </video> */}
           </div>
          </div>
          <h2 className='title mt-5 mb-3'>Teachnology</h2>
