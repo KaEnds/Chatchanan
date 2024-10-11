@@ -9,6 +9,7 @@ import './App.css'
 
 import mypicture from '../public/assets/mypicture.png/'
 import Navbar from "./Components/Navbar";
+import Contact from "./Components/Contact";
 import Mouse from "./Mouse";
 
 import canvas1 from '../public/illustration/Fighting_Hutao.png'
@@ -18,6 +19,24 @@ import canvas4 from '../public/illustration/ocdraw04.png'
 import canvas5 from '../public/illustration/breakdown art-Recovered.png'
 import canvas6 from '../public/illustration/drawoc-final.png'
 import canvas7 from '../public/illustration/koledo.png'
+
+import html from '../public/icon/html.svg'
+import css from '../public/icon/css.svg'
+import js from '../public/icon/js.svg'
+import react from '../public/icon/react.svg'
+import laravel from '../public/icon/laravel.svg'
+import tailwind from '../public/icon/tailwind.svg'
+import java from '../public/icon/java.svg'
+import python from '../public/icon/python.svg'
+import daisyui from '../public/icon/daisyui.svg'
+import mysql from '../public/icon/mysql.svg'
+import adobe from '../public/icon/adobe.svg'
+import Illustrator from '../public/icon/Illustrator.svg'
+import procreate from '../public/icon/procreate.svg'
+import figma from '../public/icon/figma.svg'
+import sea from '../public/about_image/seabackground.jpg'
+
+
 
 
 const text_up = keyframes`
@@ -255,6 +274,63 @@ function App() {
         </Fade >
         <div  className="transition-container">
         </div>
+        <Fade cascade damping={1} duration={2000}>
+          <div id='about' className='about-container'>
+            <div className='about-box'>
+              <Fade triggerOnce  duration={500} direction='left'>
+                <div className='picture-canvas'><img src={sea} onLoad={handleImageLoad}/></div>
+              </Fade>
+              <div className='about text-start px-5'>
+                <Reveal triggerOnce damping={2} keyframes={text_up} duration={500}>
+                  <h1 className='mb-4 title'><span className='fw-semibold'>A</span>bout me</h1>
+                </Reveal>
+
+                <Fade triggerOnce  duration={1000} delay={100}>
+
+                  <h5 className='heading'>Personal infomation</h5>
+                  <div className='mx-3 text personal'>
+                    <div>Date of birth: Febuary 15, 2004</div>
+                    <div>Gender : Male</div>
+                    <div>Education : king mongkut&apos;s university of technology thonburi (KMUTT)</div>
+                    <div>Major : Computer Engineering</div>
+                  </div>
+
+                  <h5 className='mt-4 heading'>My skill</h5>
+                  <div  className='mx-3'>
+                    <div className='text'>front-end, back-end developer</div>
+                    <div className='icon-box'>
+                      <div className='box'><img src={html} alt="html"></img></div>
+                      <div className='box'><img src={css} alt="css"></img></div>
+                      <div className='box'><img src={js} alt="js"></img></div>
+                      <div className='box'><img src={react} alt="react"></img></div>
+                      <div className='box'><img src={laravel} alt="laravel"></img></div>
+                      <div className='box'><img src={tailwind} alt="tailwind"></img></div>
+                      <div className='box'><img src={python} alt="python"></img></div>
+                      <div className='box'><img src={daisyui} alt="daisyui"></img></div>
+                      <div className='box'><img src={java} alt="java"></img></div>
+                      <div className='box'><img src={mysql} alt="mysql"></img></div>
+                    </div>
+                    <div className='text'>Artist, Visual Art Ilustrator</div>
+                    <div className='icon-box'>
+                      <div className='box'><img src={adobe} alt="mysql"></img></div>
+                      <div className='box'><img src={Illustrator} alt="mysql"></img></div>
+                      <div className='box'><img src={procreate} alt="mysql"></img></div>
+                    </div>
+                    <div className='text'>Graphic, UX/Ui designer</div>
+                    <div className='icon-box'>
+                      <div className='box'><img src={figma} alt="mysql"></img></div>
+                    </div>
+                  </div>
+                </Fade>
+                <div className='about-button-layout'>
+                  <motion.a href='./../public/cv/chatchanan_cv.pdf' download={'chatchanan_cv'} whileHover={{ scale: 1.15, transition: { duration: 0.3 },}} whileTap={{ scale: 0.9 }} className='dowload-button'>download cv</motion.a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </Fade>
+        <Contact />
       </div>
 
       <motion.div className='landing-footer' style={{ scaleX }}/>
