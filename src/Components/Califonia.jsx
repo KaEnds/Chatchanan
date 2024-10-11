@@ -3,6 +3,14 @@ import Navbar from './Navbar'
 import Mouse from '../Mouse.jsx';
 import Contact from './Contact'
 
+import image1 from "../../public/project_asset/califonia main.jpeg"
+import image2 from "../../public/project_asset/house image1.png"
+import image3 from "../../public/project_asset/house image3.png"
+import image4 from "../../public/project_asset/house image2.png"
+import image5 from "../../public/project_asset/house image4.png"
+import image6 from "../../public/project_asset/house image5.png"
+import image7 from "../../public/project_asset/house image6.png"
+
 function Califonia() {
   return (
     <>
@@ -17,7 +25,7 @@ function Califonia() {
          </div>
          <div className='project-image-layout'>
            <div className='project-image'>
-             <img src="./../public/project_asset/califonia main.jpeg" alt="" />
+             <img src={image1} alt="" />
            </div>
          </div>
        <div className='text project-detail'>
@@ -45,16 +53,16 @@ function Califonia() {
                     <li>
                         <div className="row my-3">
                             <div className='col-12'>
-                                <div className='image'><img src="./../public/project_asset/house image1.png" alt="" /></div>
+                                <div className='image'><img src={image2} alt="" /></div>
                             </div>
                             <div className='col-12'>
-                                <div className='image my-3'><img src="./../public/project_asset/house image3.png" alt="" /></div>
+                                <div className='image my-3'><img src={image3} alt="" /></div>
                             </div>
                         </div>
                     <li>clean the data</li>
                         <div className="row my-3">
                             <div className='col-12'>
-                                <div className='image'><img src="./../public/project_asset/house image2.png" alt="" /></div>
+                                <div className='image'><img src={image4} alt="" /></div>
                             </div>
                         </div>
                     </li>
@@ -64,17 +72,17 @@ function Califonia() {
                 <p>EDA and visualization of data</p>
                 <div className="row my-3">
                     <div className='col-12'>
-                        <div className='image'><img src="./../public/project_asset/house image4.png" alt="" /></div>
+                        <div className='image'><img src={image5} alt="" /></div>
                     </div>
                 </div>
                 <div className="row my-3">
                     <div className='col-12'>
-                        <div className='image'><img src="./../public/project_asset/house image5.png" alt="" /></div>
+                        <div className='image'><img src={image6} alt="" /></div>
                     </div>
                 </div>
                 <div className="row my-3">
                     <div className='col-12'>
-                        <div className='image'><img src="./../public/project_asset/house image6.png" alt="" /></div>
+                        <div className='image'><img src={image7} alt="" /></div>
                     </div>
                 </div>
             </li>

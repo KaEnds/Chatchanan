@@ -3,6 +3,20 @@ import Navbar from './Navbar'
 import Mouse from '../Mouse.jsx';
 import Contact from './Contact'
 
+import image1 from "../../public/project_asset/caraball main.png"
+import image2 from "../../public/project_asset/model car1.png"
+import image3 from "../../public/project_asset/model car2.png"
+import image4 from "../../public/project_asset/model map1.png"
+import image5 from "../../public/project_asset/model map2.png"
+import image6 from "../../public/project_asset/single image1.png"
+import image7 from "../../public/project_asset/single image2.png"
+import image8 from "../../public/project_asset/multi image2.png"
+import image9 from "../../public/project_asset/multi image4.png"
+import image10 from "../../public/project_asset/multi image5.png"
+
+import video1 from "../../public/project_video/single-video.mp4"
+import video2 from "../../public/project_video/multi-video.mp4"
+
 function Caraball() {
   return (
     <>
@@ -17,7 +31,7 @@ function Caraball() {
          </div>
          <div className='project-image-layout'>
            <div className='project-image'>
-             <img src="./../public/project_asset/caraball main.png" alt="" />
+             <img src={image1} alt="" />
            </div>
          </div>
        <div className='text project-detail'>
@@ -27,21 +41,21 @@ function Caraball() {
          <div className='row my-3'>
             <p>Car modeling</p>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/model car1.png" alt="" />
+              <img src={image2} alt="" />
             </div>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/model car2.png" alt="" />
+              <img src={image3} alt="" />
             </div>
          </div>
           <p>Map modeling</p>
          <div className="row my-3">
             <div className="col-12 d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/model map1.png" alt="" />
+              <img src={image4} alt="" />
             </div>
          </div>
          <div className="row my-3">
             <div className="col-12 d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/model map2.png" alt="" />
+              <img src={image5} alt="" />
             </div>
          </div>
 
@@ -49,37 +63,37 @@ function Caraball() {
          <p>Single player</p>
          <div className='row my-3'>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/single image1.png" alt="" />
+              <img src={image6} alt="" />
             </div>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/single image2.png" alt="" />
+              <img src={image7} alt="" />
             </div>
          </div>
          <div className="row my-3">
          <div className="col-12 d-flex flex-column justify-content-between">
             <video width="100%" controls autoPlay muted>
-              <source src="./../public/project_vedio/single-video.mp4" type="video/mp4" />
+              <source src={video1} type="video/mp4" />
             </video>
           </div>
          </div>
          <p>Multiple player</p>
          <div className='row my-3'>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/multi image2.png" alt="" />
+              <img src={image8} alt="" />
             </div>
             <div className="col-6  d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/multi image4.png" alt="" />
+              <img src={image9} alt="" />
             </div>
          </div>
          <div className="row my-3">
             <div className="col-12 d-flex flex-column justify-content-between">
-              <img src="./../public/project_asset/multi image5.png" alt="" />
+              <img src={image10} alt="" />
             </div>
          </div>
          <div className="row my-3 vedio-row">
           <div className="col-12 d-flex flex-column justify-content-between">
             <video width="100%" controls autoPlay muted>
-              <source src="./../public/project_vedio/multi-video.mp4" type="video/mp4" />
+              <source src={video2} type="video/mp4" />
             </video>
           </div>
          </div>

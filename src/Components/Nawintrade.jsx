@@ -3,6 +3,13 @@ import Navbar from './Navbar'
 import Mouse from '../Mouse.jsx';
 import Contact from './Contact'
 
+import image1 from "../../public/project_asset/user register.png"
+import image2 from "../../public/project_asset/ER-Diagram.png"
+import image3 from "../../public/project_asset/user register.png"
+import image4 from "../../public/project_asset/buy stock.png"
+import image5 from "../../public/project_asset/sell stock.png"
+import image6 from "../../public/project_asset/stock view.png"
+
 function Nawintrade() {
   return (
     <>
@@ -17,7 +24,7 @@ function Nawintrade() {
           </div>
           <div className='project-image-layout'>
             <div className='project-image'>
-              <img src="./../public/project_asset/user register.png" alt="" />
+              <img src={image1} alt="" />
             </div>
           </div>
         <div className='text project-detail'>
@@ -33,17 +40,17 @@ function Nawintrade() {
             <li className='mb-4'>Order Verification by Staff: Staff are notified of any trades requiring review and can confirm client orders, ensuring accurate and reliable execution of transactions.</li>
           </ul>
           <h2 className='title mt-5 mb-4'>Database design</h2>
-          <div className='image'><img src="./../public/project_asset/ER-Diagram.png" alt="" style={{maxWidth: '700px'}} /></div>
+          <div className='image'><img src={image2}  alt="" style={{maxWidth: '700px'}} /></div>
           <h2 className='title mt-5 mb-3'>UX/UI design</h2>
           <div className='row'>
             <div className='col-6'>
-              <div className='image'><img src="./../public/project_asset/stock view.png" alt="" /></div>
+              <div className='image'><img src={image6} alt="" /></div>
 
             </div>
             <div className='col-6 d-flex flex-column justify-content-between'>
-              <div className='image'><img src="./../public/project_asset/user register.png" alt="" /></div>
-              <div className='image'><img src="./../public/project_asset/buy stock.png" alt="" /></div>
-              <div className='image'><img src="./../public/project_asset/sell stock.png" alt="" /></div>
+              <div className='image'><img src={image3}  alt="" /></div>
+              <div className='image'><img src={image4}  alt="" /></div>
+              <div className='image'><img src={image5}  alt="" /></div>
             </div>
 
           </div>

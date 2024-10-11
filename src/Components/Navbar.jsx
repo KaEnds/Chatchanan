@@ -35,7 +35,7 @@ function Navbar() {
       <div className="nav-container d-flex justify-content-between align-items-center">
         <div className="logo fw-light"><span className="fw-semibold">K</span>eniz</div>
         <div className="navigator">
-          <a href="/">Home</a>
+          <a href="/Chatchanan/">Home</a>
           <a href="#portfolio">Portfolio</a>
           <a href="#art-gallary">Art gallary</a>
           <a href="#about">About</a>
